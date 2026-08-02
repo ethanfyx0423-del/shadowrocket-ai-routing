@@ -1,8 +1,8 @@
-#!name=AI 与 Claude 纯净节点覆写
-#!desc=将 yfamilys AI 规则及 Claude/Anthropic 域名优先路由到 Shadowrocket 自建的“美国”分组，同时保留原配置自动更新。
+#!name=AI 纯净节点与 Claude 固定美国 3
+#!desc=将 Claude/Anthropic 固定路由到“美国 3”节点，其他 yfamilys AI 规则仍路由到自建的“美国”分组，同时保留原配置自动更新。
 
 [Rule]
-DOMAIN-SUFFIX,claude.ai,美国
-DOMAIN-SUFFIX,anthropic.com,美国
-DOMAIN-KEYWORD,claude,美国
+DOMAIN-SUFFIX,claude.ai,美国 3
+DOMAIN-SUFFIX,anthropic.com,美国 3
+DOMAIN-KEYWORD,claude,美国 3
 RULE-SET,https://yfamilys.com/rule/ai.list,美国
