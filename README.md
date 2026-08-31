@@ -34,3 +34,13 @@ https://raw.githubusercontent.com/ethanfyx0423-del/shadowrocket-ai-routing/main/
 ```
 
 使用前请禁用或删除原版 `biliad.module`，不要同时启用两个版本。该模块包含 HTTPS 响应脚本，需要为当前配置正确安装并启用 Shadowrocket 的 HTTPS 解密证书。更新模块后请彻底关闭并重新打开哔哩哔哩；若会员购仍未出现，再清理哔哩哔哩缓存后重试。
+
+## LinkedIn 香港节点组分流
+
+该模块把 LinkedIn App、网页及相关静态资源固定路由到现有的 `🇭🇰 香港节点`策略组。它不会绑定单一节点，组内节点仍可按原配置自动测速和切换。
+
+```text
+https://raw.githubusercontent.com/ethanfyx0423-del/shadowrocket-ai-routing/main/linkedin-hk-routing.sgmodule
+```
+
+在 Shadowrocket 的“配置 → 模块”中通过上面的 Raw URL 添加并启用模块，然后彻底关闭并重新打开 LinkedIn。当前配置中必须存在名称完全一致的 `🇭🇰 香港节点`策略组。
