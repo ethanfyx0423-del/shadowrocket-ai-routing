@@ -1,10 +1,10 @@
 #!name=AI 分流：ChatGPT/Gemini 美国节点组
-#!desc=Claude/Anthropic 固定走“美国 3”，ChatGPT/OpenAI 与 Gemini 固定走“🇺🇸 美国节点”地区组，其他 AI 使用“🤖️ 人工智能”策略组。
+#!desc=Claude/Anthropic 固定走“[静态家宽]美国”，ChatGPT/OpenAI 与 Gemini 固定走“🇺🇸 美国节点”地区组，其他 AI 使用“🤖️ 人工智能”策略组。
 
 [Rule]
-DOMAIN-SUFFIX,claude.ai,美国 3
-DOMAIN-SUFFIX,anthropic.com,美国 3
-DOMAIN-KEYWORD,claude,美国 3
+DOMAIN-SUFFIX,claude.ai,[静态家宽]美国
+DOMAIN-SUFFIX,anthropic.com,[静态家宽]美国
+DOMAIN-KEYWORD,claude,[静态家宽]美国
 
 # ChatGPT/OpenAI 本地兜底规则
 DOMAIN-SUFFIX,chatgpt.com,🇺🇸 美国节点

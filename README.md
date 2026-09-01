@@ -1,16 +1,16 @@
 # Shadowrocket AI Routing
 
-这个模块把 Claude、Anthropic 固定路由到 Shadowrocket 中的 `美国 3` 节点，把 ChatGPT/OpenAI 与 Gemini 固定路由到 `🇺🇸 美国节点`地区组，其他 AI 服务继续使用基础配置中的 `🤖️ 人工智能`策略组。模块不直接修改订阅配置，因此原配置仍可正常自动更新。
+这个模块把 Claude、Anthropic 固定路由到 Shadowrocket 中的 `[静态家宽]美国` 节点，把 ChatGPT/OpenAI 与 Gemini 固定路由到 `🇺🇸 美国节点`地区组，其他 AI 服务继续使用基础配置中的 `🤖️ 人工智能`策略组。模块不直接修改订阅配置，因此原配置仍可正常自动更新。
 
 ## 使用前提
 
 Shadowrocket 中需要同时存在：
 
-- 名称完全一致的节点 `美国 3`，供 Claude/Anthropic 固定使用；
+- 名称完全一致的节点 `[静态家宽]美国`，供 Claude/Anthropic 固定使用；
 - 名称完全一致的策略组 `🇺🇸 美国节点`，供 ChatGPT/OpenAI 与 Gemini 使用；
 - 名称完全一致的策略组 `🤖️ 人工智能`，供其他 AI 服务使用。
 
-如果机场订阅以后重命名或删除 `美国 3`，需要同步修改本模块中的策略名称。
+如果机场订阅以后重命名或删除 `[静态家宽]美国`，需要同步修改本模块中的策略名称。
 
 ## 安装
 
@@ -22,7 +22,7 @@ https://raw.githubusercontent.com/ethanfyx0423-del/shadowrocket-ai-routing/main/
 
 启用后可在“配置 → 测试规则”中测试：
 
-- `claude.ai` 和 `anthropic.com`，结果应显示策略为 `美国 3`；
+- `claude.ai` 和 `anthropic.com`，结果应显示策略为 `[静态家宽]美国`；
 - `chatgpt.com` 和 `openai.com`，结果应显示策略为 `🇺🇸 美国节点`；
 - `gemini.google.com` 和 `generativelanguage.googleapis.com`，结果应显示策略为 `🇺🇸 美国节点`。
 
