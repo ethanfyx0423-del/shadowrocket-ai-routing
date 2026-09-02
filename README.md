@@ -1,14 +1,25 @@
 # Shadowrocket AI Routing
 
-这个模块把 Claude、Anthropic 固定路由到 Shadowrocket 中的 `[静态家宽]美国` 节点，把 ChatGPT/OpenAI 与 Gemini 固定路由到 `🇺🇸 美国节点`地区组，其他 AI 服务继续使用基础配置中的 `🤖️ 人工智能`策略组。模块不直接修改订阅配置，因此原配置仍可正常自动更新。
+主配置把 Flower SS 与鹊桥作为两个独立节点源，在同一地区内共同自动测速；Claude、Anthropic 固定路由到 `[静态家宽]美国`，ChatGPT/OpenAI、Gemini 与其他 AI 只使用 `🤖️ 人工智能`中的 Flower 美国节点。AI 模块提供相同的规则覆盖，可与主配置配合使用。
+
+## 双订阅主配置
+
+文件：`shadowrocket-dual-subscriptions.conf`
+
+- 普通境外流量默认使用香港地区组；
+- 香港、日本、新加坡、台湾、美国等地区组会同时匹配两个订阅中的同地区节点；
+- Claude 固定到 `[静态家宽]美国`，没有备用节点；
+- 其他 AI 使用 Flower 美国高级1、高级3及标准1–8组成的故障转移组；已被识别为 SOCKS5 代理的高级2不参与；
+- 配置不包含节点密码和订阅地址，也不设置会覆盖自定义内容的 `update-url`。
+
+导入后，应继续保留并更新 Flower SS 与鹊桥两个订阅，但在“配置”页勾选本文件，不要把只含 `[Proxy]` 的订阅文件当作活动路由配置。
 
 ## 使用前提
 
 Shadowrocket 中需要同时存在：
 
 - 名称完全一致的节点 `[静态家宽]美国`，供 Claude/Anthropic 固定使用；
-- 名称完全一致的策略组 `🇺🇸 美国节点`，供 ChatGPT/OpenAI 与 Gemini 使用；
-- 名称完全一致的策略组 `🤖️ 人工智能`，供其他 AI 服务使用。
+- 名称完全一致的策略组 `🤖️ 人工智能`，供 Claude 之外的 AI 服务使用。
 
 如果机场订阅以后重命名或删除 `[静态家宽]美国`，需要同步修改本模块中的策略名称。
 
@@ -23,8 +34,8 @@ https://raw.githubusercontent.com/ethanfyx0423-del/shadowrocket-ai-routing/main/
 启用后可在“配置 → 测试规则”中测试：
 
 - `claude.ai` 和 `anthropic.com`，结果应显示策略为 `[静态家宽]美国`；
-- `chatgpt.com` 和 `openai.com`，结果应显示策略为 `🇺🇸 美国节点`；
-- `gemini.google.com` 和 `generativelanguage.googleapis.com`，结果应显示策略为 `🇺🇸 美国节点`。
+- `chatgpt.com` 和 `openai.com`，结果应显示策略为 `🤖️ 人工智能`；
+- `gemini.google.com` 和 `generativelanguage.googleapis.com`，结果应显示策略为 `🤖️ 人工智能`。
 
 ## 后续更新
 

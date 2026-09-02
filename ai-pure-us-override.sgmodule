@@ -1,5 +1,5 @@
-#!name=AI 分流：ChatGPT/Gemini 美国节点组
-#!desc=Claude/Anthropic 固定走“[静态家宽]美国”，ChatGPT/OpenAI 与 Gemini 固定走“🇺🇸 美国节点”地区组，其他 AI 使用“🤖️ 人工智能”策略组。
+#!name=AI 分流：Claude 固定 / 其他 AI Flower
+#!desc=Claude/Anthropic 固定走“[静态家宽]美国”；ChatGPT/OpenAI、Gemini 与其他 AI 只走“🤖️ 人工智能”Flower 稳定组。
 
 [Rule]
 DOMAIN-SUFFIX,claude.ai,[静态家宽]美国
@@ -7,23 +7,23 @@ DOMAIN-SUFFIX,anthropic.com,[静态家宽]美国
 DOMAIN-KEYWORD,claude,[静态家宽]美国
 
 # ChatGPT/OpenAI 本地兜底规则
-DOMAIN-SUFFIX,chatgpt.com,🇺🇸 美国节点
-DOMAIN-SUFFIX,openai.com,🇺🇸 美国节点
-DOMAIN-SUFFIX,oaistatic.com,🇺🇸 美国节点
-DOMAIN-SUFFIX,oaiusercontent.com,🇺🇸 美国节点
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🇺🇸 美国节点
+DOMAIN-SUFFIX,chatgpt.com,🤖️ 人工智能
+DOMAIN-SUFFIX,openai.com,🤖️ 人工智能
+DOMAIN-SUFFIX,oaistatic.com,🤖️ 人工智能
+DOMAIN-SUFFIX,oaiusercontent.com,🤖️ 人工智能
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🤖️ 人工智能
 
 # Gemini 本地兜底规则
-DOMAIN-SUFFIX,gemini.google.com,🇺🇸 美国节点
-DOMAIN-SUFFIX,generativeai.google,🇺🇸 美国节点
-DOMAIN-SUFFIX,deepmind.google,🇺🇸 美国节点
-DOMAIN-SUFFIX,deepmind.com,🇺🇸 美国节点
-DOMAIN,generativelanguage.googleapis.com,🇺🇸 美国节点
-DOMAIN-KEYWORD,generativelanguage,🇺🇸 美国节点
+DOMAIN-SUFFIX,gemini.google.com,🤖️ 人工智能
+DOMAIN-SUFFIX,generativeai.google,🤖️ 人工智能
+DOMAIN-SUFFIX,deepmind.google,🤖️ 人工智能
+DOMAIN-SUFFIX,deepmind.com,🤖️ 人工智能
+DOMAIN,generativelanguage.googleapis.com,🤖️ 人工智能
+DOMAIN-KEYWORD,generativelanguage,🤖️ 人工智能
 
 # 完整服务规则，随上游规则库更新
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list,🇺🇸 美国节点
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Gemini/Gemini.list,🇺🇸 美国节点
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list,🤖️ 人工智能
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Gemini/Gemini.list,🤖️ 人工智能
 
 # 其他 AI 服务沿用基础配置中的人工智能策略组
 RULE-SET,https://yfamilys.com/rule/ai.list,🤖️ 人工智能
