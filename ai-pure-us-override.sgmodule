@@ -1,5 +1,5 @@
-#!name=AI 分流：Claude 固定 / 其他 AI Flower
-#!desc=Claude/Anthropic 固定走“[静态家宽]美国”；ChatGPT/OpenAI、Gemini 与其他 AI 只走“🤖️ 人工智能”Flower 稳定组。
+#!name=AI 分流：Claude 固定 / 其他 AI 家宽优先
+#!desc=Claude/Anthropic 固定走“[静态家宽]美国”；ChatGPT/OpenAI、Gemini 与其他 AI 走“🤖️ 人工智能”组，优先静态家宽，Flower 备用。
 
 [Rule]
 DOMAIN-SUFFIX,claude.ai,[静态家宽]美国
