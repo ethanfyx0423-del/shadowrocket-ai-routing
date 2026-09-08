@@ -1,0 +1,13 @@
+#!name=贴吧仅去开屏广告
+#!desc=仅处理百度贴吧 getSplashAd 开屏广告接口；不修改同步、信息流、帖子列表或其他百度服务。
+#!homepage=https://github.com/ethanfyx0423-del/shadowrocket-ai-routing
+#!author=app2smile；最小化模块整理：ethanfyx0423-del
+
+# 上游脚本：https://github.com/app2smile/rules/blob/master/js/tieba-json.js
+# 若贴吧启动异常，请立即停用本模块；不要与 ultra/ultra+ 同时启用。
+
+[Script]
+tieba-splash-only=type=http-response,pattern=^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/c\/f\/ad\/getSplashAd$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js,script-update-interval=0
+
+[MITM]
+hostname = %APPEND% tiebac.baidu.com
