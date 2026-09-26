@@ -6,6 +6,9 @@ DOMAIN-SUFFIX,claude.ai,[静态家宽]美国
 DOMAIN-SUFFIX,anthropic.com,[静态家宽]美国
 DOMAIN-KEYWORD,claude,[静态家宽]美国
 
+# Meta Muse 走美国 AI 组
+DOMAIN-SUFFIX,muse.ai,🤖️ 人工智能
+
 # ChatGPT/OpenAI 本地兜底规则
 DOMAIN-SUFFIX,chatgpt.com,🤖️ 人工智能
 DOMAIN-SUFFIX,openai.com,🤖️ 人工智能
